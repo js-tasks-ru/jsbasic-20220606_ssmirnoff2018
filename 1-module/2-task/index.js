@@ -12,8 +12,13 @@ function print(text) {
  */
 
  function isValid(name) {
-  
-   return typeof(name) !== "object" && name !== "undefined" && name !== "" && !name.includes(" ") && name.length >= 4;
+  const isNotNull = typeof(name) !== "object";
+  const isNotUndefined = name !== "undefined";
+  const isNotEmpty = name !== "";
+  const isNotSpace = !name.includes(" ");
+  const isNotShort = name.length >= 4;
+
+  return isNotNull && isNotUndefined && isNotEmpty && isNotSpace && isNotShort;
  }
  
 function sayHello() {
