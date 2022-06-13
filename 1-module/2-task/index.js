@@ -12,15 +12,19 @@ function print(text) {
  */
 
  function isValid(name) {
-  const isNotNull = typeof(name) !== "object";
-  const isNotUndefined = name !== "undefined";
-  const isNotEmpty = name !== "";
-  const isNotSpace = !name.includes(" ");
-  const isNotShort = name.length >= 4;
+  
+  if (name === null || name === '') {
+    return false;
+  } else {
+    let isNotSpace = name.includes(' ');
+    if (isNotSpace === false && name.length >= 4) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
 
-  return isNotNull && isNotUndefined && isNotEmpty && isNotSpace && isNotShort;
- }
- 
 function sayHello() {
   let userName = prompt('Введите ваше имя');
 
