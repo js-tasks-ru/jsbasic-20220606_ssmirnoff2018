@@ -1,6 +1,7 @@
 /**
  * Эту функцию трогать не нужно
  */
+
 function print(text) {
   console.log(text);
 }
@@ -9,8 +10,19 @@ function print(text) {
  * Эту функцию нужно поменять так,
  * чтобы функция sayHello работала корректно
  */
-function isValid(name) {
-  // ваш код...
+
+ function isValid(name) {
+  
+  if (name === null || name === '') {
+    return false;
+  } else {
+    let isNotSpace = name.includes(' ');
+    if (isNotSpace === false && name.length >= 4) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
 
 function sayHello() {
